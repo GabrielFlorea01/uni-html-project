@@ -32,3 +32,9 @@ document.getElementById('priceRange').addEventListener('input', function () {
         }
     });
 });
+
+document.querySelectorAll('.produs button').forEach(button => {
+    button.addEventListener('click', function() {
+        alert('Produsul a fost adăugat în coș!');
+    });
+});
