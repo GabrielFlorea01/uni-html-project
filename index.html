@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magazin Online de Telefoane</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <h1>Apple Shop</h1>
+        </div>
+        <nav>
+            <ul class="menu">
+                <li><a href="#">Despre noi</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Cosul meu</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="price-filter">
+            <label for="priceRange">Filtrează după preț: <span id="priceValue">0 RON</span></label>
+            <input type="range" id="priceRange" min="0" max="10000" value="10000" step="100">
+        </div>
+
+        <section class="produs-lista" id="produs-lista">
+            <div class="produs" id="produs1" data-price="5500" draggable="true" ondragstart="drag(event)">
+                <img src="iphone15pro.png" alt="Telefon 1">
+                <h3>Iphone 15 Pro</h3>
+                <p><strong>Preț: <span class="price">5500</span> RON</strong></p>
+                <button>Adaugă în coș</button>
+            </div>
+            <div class="produs" id="produs2" data-price="5500" draggable="true" ondragstart="drag(event)">
+                <img src="iphone16.png" alt="Telefon 2">
+                <h3>Iphone 16</h3>
+                <p><strong>Pret: <span class="price">5500</span> RON</strong></p>
+                <button>Adauga in cos</button>
+            </div>
+            <div class="produs" id="produs3" data-price="9000" draggable="true" ondragstart="drag(event)">
+                <img src="macbookpro.png" alt="Laptop 1">
+                <h3>MackBook Pro M1</h3>
+                <p><strong>Pret: <span class="price">9000</span> RON</strong></p>
+                <button>Adauga in cos</button>
+            </div>
+            <div class="produs" id="produs4" data-price="1000" draggable="true" ondragstart="drag(event)">
+                <img src="airpodspro.png" alt="Casti 1">
+                <h3>Casti AirPodsPro</h3>
+                <p><strong>Pret: <span class="price">1000</span> RON</strong></p>
+                <button>Adauga in cos</button>
+            </div>
+            <div class="produs" id="produs5" data-price="6500" draggable="true" ondragstart="drag(event)">
+                <img src="iphone16pro.png" alt="Telefon 3">
+                <h3>Iphone 16Pro</h3>
+                <p><strong>Pret: <span class="price">6500</span> RON</strong></p>
+                <button>Adauga in cos</button>
+            </div>
+        </section>
+
+        <div id="basket" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <i class="fas fa-shopping-basket"></i>
+            <p>Drag and drop in cos</p>
+        </div>
+    </main>
+
+
+    <footer>
+        <p>&copy; 2024 Magazin Telefoane. Toate drepturile rezervate.</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+
+</html>
