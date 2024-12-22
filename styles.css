@@ -133,9 +133,11 @@ nav ul.menu li a:hover {
 
 .produs-lista {
     display: flex;
-    overflow-x: auto;
-    scroll-behavior: smooth;
+    flex-wrap: wrap;
+    justify-content: space-around;
     gap: 20px;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .produs {
@@ -155,6 +157,7 @@ nav ul.menu li a:hover {
 
 #basket {
     margin-top: 30px;
+    margin-bottom: 30px;
     padding: 20px;
     background-color: #333;
     color: white;
@@ -211,4 +214,11 @@ footer {
 
 #basket-icon.jump {
     animation: jump 1s ease-in-out;
+}
+
+video {
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    max-width: 100%;
+    margin-bottom: 20px;
 }
