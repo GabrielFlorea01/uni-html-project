@@ -21,7 +21,7 @@
                 <li><a href="cosul-meu.html">Coșul meu</a></li>
             </ul>
         </nav>
-    </header>
+    </header>  
 
     <aside class="promotion" id="promotion">
         <div class="promotion-content">
@@ -63,13 +63,23 @@
                 <p><strong>Pret: <span class="price">6500</span> RON</strong></p>
                 <button>Adauga in cos</button>
             </div>
+            <div class="produs" id="produs6" data-price="2150" draggable="true" ondragstart="drag(event)">
+                <img src="applewatch.png" alt="Ceas 1">
+                <h3>Apple Watch S10</h3>
+                <p><strong>Pret: <span class="price">2150</span> RON</strong></p>
+                <button>Adauga in cos</button>
         </section>
     </main>
+    
+    <div id="basket" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <i id="basket-icon" class="fas fa-shopping-basket"></i>
+        <p>Drag and drop in coș pentru achiziționare rapidă!</p>
+    </div>
 
-        <div id="basket" ondrop="drop(event)" ondragover="allowDrop(event)">
-            <i id="basket-icon" class="fas fa-shopping-basket"></i>
-            <p>Drag and drop in coș pentru achiziționare rapidă!</p>
-        </div>
+    <video width="100%" loop autoplay muted>
+        <source src="iphone-video.mp4" type="video/mp4">
+    </video>  
+
 
     <footer>
         <p>&copy; 2025 Magazin Telefoane. Toate drepturile rezervate.</p>
