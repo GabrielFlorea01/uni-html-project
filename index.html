@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Magazin Online de Telefoane</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -15,19 +16,22 @@
         </div>
         <nav>
             <ul class="menu">
-                <li><a href="#">Despre noi</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">Cosul meu</a></li>
+                <li><a href="despre-noi.html">Despre noi</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="cosul-meu.html">Coșul meu</a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
-        <div class="price-filter">
-            <label for="priceRange">Filtrează după preț: <span id="priceValue">0 RON</span></label>
-            <input type="range" id="priceRange" min="0" max="10000" value="10000" step="100">
+    <aside class="promotion" id="promotion">
+        <div class="promotion-content">
+            <img src="promotion.png" alt="Promotion Image" class="promotion-image">
+            <p>Oferta specială! Reducere de pana la 40% la toate produsele!</p>
+            <button class="close-btn" onclick="togglePromotion()">Închide</button>
         </div>
+    </aside>
 
+    <main>
         <section class="produs-lista" id="produs-lista">
             <div class="produs" id="produs1" data-price="5500" draggable="true" ondragstart="drag(event)">
                 <img src="iphone15pro.png" alt="Telefon 1">
@@ -60,19 +64,19 @@
                 <button>Adauga in cos</button>
             </div>
         </section>
-
-        <div id="basket" ondrop="drop(event)" ondragover="allowDrop(event)">
-            <i class="fas fa-shopping-basket"></i>
-            <p>Drag and drop in cos</p>
-        </div>
     </main>
 
+        <div id="basket" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <i id="basket-icon" class="fas fa-shopping-basket"></i>
+            <p>Drag and drop in coș pentru achiziționare rapidă!</p>
+        </div>
 
     <footer>
-        <p>&copy; 2024 Magazin Telefoane. Toate drepturile rezervate.</p>
+        <p>&copy; 2025 Magazin Telefoane. Toate drepturile rezervate.</p>
     </footer>
 
     <script src="scripts.js"></script>
+    <script src="cosulmeu.js"></script>
 </body>
 
 </html>

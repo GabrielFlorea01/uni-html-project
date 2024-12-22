@@ -5,6 +5,8 @@
 }
 
 body {
+    margin: 0;
+    padding: 0;
     font-family: Arial, sans-serif;
     line-height: 1.6;
     background-color: #f4f4f4;
@@ -15,10 +17,57 @@ header {
     color: #fff;
     padding: 10px 0;
     text-align: center;
+    margin-bottom: 10px;
 }
 
 header h1 {
     margin-bottom: 20px;
+}
+
+.promotion {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 500px;
+    padding: 20px;
+    background-color: #ffcc00;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: block; /* Initially displayed */
+    z-index: 1000;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.promotion-image {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.promotion p {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+}
+
+.close-btn {
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.close-btn:hover {
+    background-color: #cc0000;
+}
+
+.promotion.hidden {
+    display: none;
 }
 
 nav ul.menu {
@@ -109,7 +158,7 @@ nav ul.menu li a:hover {
     padding: 20px;
     background-color: #333;
     color: white;
-    width: 200px;
+    width: 400px;
     margin-left: auto;
     margin-right: auto;
     text-align: center;
@@ -129,7 +178,6 @@ nav ul.menu li a:hover {
     background-color: #555;
 }
 
-
 .produs button {
     background-color: #333;
     color: white;
@@ -147,8 +195,20 @@ footer {
     background-color: #333;
     color: white;
     text-align: center;
-    padding: 10px 0;
+    padding: 05px 0;
     position: fixed;
     bottom: 0;
     width: 100%;
+}
+
+@keyframes jump {
+    0% { transform: translateY(0); }
+    30% { transform: translateY(-10px); }
+    50% { transform: translateY(0); }
+    70% { transform: translateY(-5px); }
+    100% { transform: translateY(0); }
+}
+
+#basket-icon.jump {
+    animation: jump 1s ease-in-out;
 }
