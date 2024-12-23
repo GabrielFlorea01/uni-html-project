@@ -49,6 +49,28 @@ nav ul li a:hover {
     border-radius: 5px;
 }
 
+main h3 {
+    margin-top: 50px;
+    padding: auto;
+    font-size: 14px;
+    text-align: center;
+}
+
+main h4 {
+    padding: auto;
+    font-size: 14px;
+    text-align: center;
+}
+
+#map {
+    height: 400px;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
 footer {
     background-color: #333;
     color: white;

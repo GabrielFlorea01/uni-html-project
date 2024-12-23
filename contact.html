@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="ro">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact</title>
     <link rel="stylesheet" href="contact.css">
 </head>
+
 <body>
     <header>
         <div class="logo">
@@ -22,11 +24,42 @@
 
     <main>
         <h2>Contact</h2>
-        <p>Ne poți contacta la: <strong>email@appleshop.ro</strong></p>
+        <form id="contact-form">
+            <div class="form-group">
+                <label for="name">Nume:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Telefon:</label>
+                <input type="text" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Mesaj:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="signature">Semnătura:</label>
+                <canvas id="signature" width="400" height="100" style="border: 1px solid #ccc;"></canvas>
+                <br>
+                <button type="button" onclick="clearSignature()">Șterge semnătura</button>
+            </div>
+
+            <button type="submit">Trimite</button>
+        </form>
+
+        <p id="success-message" style="display:none; color: green; font-weight: bold;">Datele au fost trimise cu succes!</p>
     </main>
 
     <footer>
         <p>&copy; 2025 Apple Shop. Toate drepturile rezervate.</p>
     </footer>
+
+    <script src="contact.js"></script>
 </body>
+
 </html>
