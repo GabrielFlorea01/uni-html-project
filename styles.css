@@ -34,7 +34,7 @@ header h1 {
     padding: 20px;
     background-color: #ffcc00;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    display: block; /* Initially displayed */
+    display: block;
     z-index: 1000;
     border-radius: 8px;
     text-align: center;
