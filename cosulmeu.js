@@ -75,5 +75,8 @@ if (clearButton) {
         localStorage.removeItem('basket');
         productList.innerHTML = "<li>Coșul a fost golit!</li>";
         alert("Coșul a fost golit!");
+        setTimeout(function () {
+            window.location.reload();
+        }, 2000);
     });
 }
