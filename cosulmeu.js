@@ -15,7 +15,7 @@ function updateBasketDisplay(discountedBasket) {
     productList.innerHTML = '';
     discountedBasket.forEach(product => {
         const li = document.createElement('li');
-        li.innerHTML = `${product.name} - ${product.discountedPrice} RON`;
+        li.innerHTML = `${product.name} - ${product.productPrice} RON, cu reducere -- ${product.discountedPrice} RON`;
         productList.appendChild(li);
     });
 
@@ -39,7 +39,7 @@ if (basket.length > 0) {
         }
     });
 } else {
-    productList.innerHTML = '<li>Coșul este gol.</li>';
+    productList.innerHTML = '<li>Cosul este gol.</li>';
     if (totalDisplay) {
         totalDisplay.textContent = 'Total: 0 RON';
     }
