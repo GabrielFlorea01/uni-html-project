@@ -10,12 +10,11 @@ document.body.appendChild(promotionMessage);
 
 const discountWorker = new Worker('discountWorker.js');
 
-
 function updateBasketDisplay(discountedBasket) {
     productList.innerHTML = '';
     discountedBasket.forEach(product => {
         const li = document.createElement('li');
-        li.innerHTML = `${product.name} - ${product.discountedPrice} RON`;
+        li.innerHTML = `${product.name} - ${product.productPrice} RON, cu reducere -- ${product.discountedPrice} RON`;
         productList.appendChild(li);
     });
 
@@ -39,7 +38,7 @@ if (basket.length > 0) {
         }
     });
 } else {
-    productList.innerHTML = '<li>Coșul este gol.</li>';
+    productList.innerHTML = '<li>Cosul este gol.</li>';
     if (totalDisplay) {
         totalDisplay.textContent = 'Total: 0 RON';
     }
@@ -48,12 +47,34 @@ if (basket.length > 0) {
 const clearButton = document.getElementById('clear-basket');
 if (clearButton) {
     clearButton.addEventListener('click', function () {
+        if (basket.length === 0) {
+            alert('Cosul este gol!');
+            return;
+        }
+
         localStorage.removeItem('basket');
         productList.innerHTML = '<li>Cosul a fost golit!</li>';
         if (totalDisplay) {
             totalDisplay.textContent = 'Total: 0 RON';
         }
-        alert('Coșul a fost golit!');
+        alert('Cosul a fost golit!');
+        setTimeout(function () {
+            window.location.reload();
+        }, 2000);
+    });
+}
+
+const order = document.getElementById('shop');
+if (order) {
+    order.addEventListener('click', function () {
+        if (basket.length === 0) {
+            alert('Cosul este gol! Nu puteti plasa o comanda.');
+            return; 
+        }
+
+        localStorage.removeItem('basket');
+        productList.innerHTML = '<li>Produsele au fost comandate cu succes!</li>';
+        alert('Produsele au fost comandate cu succes!');
         setTimeout(function () {
             window.location.reload();
         }, 2000);
