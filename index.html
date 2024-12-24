@@ -11,7 +11,7 @@
 
 <body>
     <header>
-        <div class="logo">
+        <div class="logo" contenteditable="true">
             <h1>Apple Shop</h1>
         </div>
         <nav>
@@ -30,7 +30,7 @@
             <button class="close-btn" onclick="togglePromotion()">Închide</button>
         </div>
     </aside>
-§
+
     <main>
         <section class="produs-lista" id="produs-lista">
             <div class="produs" id="produs1" data-price="5500" draggable="true" ondragstart="drag(event)">
@@ -69,18 +69,15 @@
                 <p><strong>Pret: <span class="price">2150</span> RON</strong></p>
                 <button>Adauga in cos</button>
         </section>
+            <div id="basket" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <i id="basket-icon" class="fas fa-shopping-basket"></i>
+                <p>Drag and drop in coș pentru achiziționare rapidă!</p>
+            </div>
+            <video width="100%" loop autoplay muted>
+                <source src="iphone-video.mp4" type="video/mp4">
+            </video>  
     </main>
     
-    <div id="basket" ondrop="drop(event)" ondragover="allowDrop(event)">
-        <i id="basket-icon" class="fas fa-shopping-basket"></i>
-        <p>Drag and drop in coș pentru achiziționare rapidă!</p>
-    </div>
-
-    <video width="100%" loop autoplay muted>
-        <source src="iphone-video.mp4" type="video/mp4">
-    </video>  
-
-
     <footer>
         <p>&copy; 2025 Magazin Telefoane. Toate drepturile rezervate.</p>
     </footer>
