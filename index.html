@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ro">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +7,6 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 </head>
-
 <body>
     <header>
         <div class="logo" contenteditable="true">
@@ -22,67 +20,70 @@
             </ul>
         </nav>
     </header>  
-
     <aside class="promotion" id="promotion">
         <div class="promotion-content">
-            <img src="promotion.png" alt="Promotion Image" class="promotion-image">
+            <img src="poze/promotion.png" alt="Promotion Image" class="promotion-image">
             <p>Oferta specială! Reducere de pana la 40% la toate produsele!</p>
             <button class="close-btn" onclick="togglePromotion()">Închide</button>
         </div>
     </aside>
-
     <main>
         <section class="produs-lista" id="produs-lista">
             <div class="produs" id="produs1" data-price="5500" draggable="true" ondragstart="drag(event)">
-                <img src="iphone15pro.png" alt="Telefon 1">
+                <img src="poze/iphone15pro.png" alt="Telefon 1">
                 <h3>Iphone 15 Pro</h3>
                 <p><strong>Preț: <span class="price">5500</span> RON</strong></p>
                 <button>Adaugă în coș</button>
             </div>
             <div class="produs" id="produs2" data-price="5500" draggable="true" ondragstart="drag(event)">
-                <img src="iphone16.png" alt="Telefon 2">
+                <img src="poze/iphone16.png" alt="Telefon 2">
                 <h3>Iphone 16</h3>
                 <p><strong>Pret: <span class="price">5500</span> RON</strong></p>
                 <button>Adauga in cos</button>
             </div>
             <div class="produs" id="produs3" data-price="9000" draggable="true" ondragstart="drag(event)">
-                <img src="macbookpro.png" alt="Laptop 1">
+                <img src="poze/macbookpro.png" alt="Laptop 1">
                 <h3>MackBook Pro M1</h3>
                 <p><strong>Pret: <span class="price">9000</span> RON</strong></p>
                 <button>Adauga in cos</button>
             </div>
             <div class="produs" id="produs4" data-price="1000" draggable="true" ondragstart="drag(event)">
-                <img src="airpodspro.png" alt="Casti 1">
+                <img src="poze/airpodspro.png" alt="Casti 1">
                 <h3>Casti AirPodsPro</h3>
                 <p><strong>Pret: <span class="price">1000</span> RON</strong></p>
                 <button>Adauga in cos</button>
             </div>
             <div class="produs" id="produs5" data-price="6500" draggable="true" ondragstart="drag(event)">
-                <img src="iphone16pro.png" alt="Telefon 3">
+                <img src="poze/iphone16pro.png" alt="Telefon 3">
                 <h3>Iphone 16Pro</h3>
                 <p><strong>Pret: <span class="price">6500</span> RON</strong></p>
                 <button>Adauga in cos</button>
             </div>
             <div class="produs" id="produs6" data-price="2150" draggable="true" ondragstart="drag(event)">
-                <img src="applewatch.png" alt="Ceas 1">
+                <img src="poze/applewatch.png" alt="Ceas 1">
                 <h3>Apple Watch S10</h3>
                 <p><strong>Pret: <span class="price">2150</span> RON</strong></p>
-                <button>Adauga in cos</button>
+                <button>Adauga in cos</button>  
         </section>
-            <div id="basket" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <div id="basket" ondrop="drop(event)" ondragover="allowDrop(event)" onclick="addEventListener">
                 <i id="basket-icon" class="fas fa-shopping-basket"></i>
                 <p>Drag and drop in coș pentru achiziționare rapidă!</p>
             </div>
             <video width="100%" loop autoplay muted>
-                <source src="iphone-video.mp4" type="video/mp4">
+                <source src="/poze/iphone-video.mp4" type="video/mp4">
             </video>  
     </main>
-    
+    <svg width="100%" height="10">
+        <symbol id="barShape">
+            <rect width="100%" height="10" fill="black" />
+        </symbol>
+        <use xlink:href="#barShape" x="0" y="0" />
+    </svg>    
     <footer>
         <p>&copy; 2025 Magazin Telefoane. Toate drepturile rezervate.</p>
     </footer>
-
     <script src="scripts.js"></script>
+    <script src="alerts.js"></script>
 </body>
 
 </html>

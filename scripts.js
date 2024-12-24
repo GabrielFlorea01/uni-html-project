@@ -57,3 +57,7 @@ document.querySelectorAll('.produs button').forEach(button => {
         }, 1000);
     });
 });
+
+basket.addEventListener('click', function() {
+        window.location.href = 'cosul-meu.html';
+});
