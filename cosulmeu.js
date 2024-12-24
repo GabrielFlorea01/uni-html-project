@@ -1,13 +1,3 @@
-const clearButton = document.getElementById('clear-basket');
-if (clearButton) {
-    clearButton.addEventListener('click', function() {
-        localStorage.removeItem('basket');
-        productList.innerHTML = "<li>Coșul a fost golit!</li>";
-        alert("Coșul a fost golit!");
-        window.location.reload();
-    });
-}
-
 const basket = JSON.parse(localStorage.getItem('basket')) || [];
 const productList = document.getElementById('product-list');
 if (basket.length === 0) {
