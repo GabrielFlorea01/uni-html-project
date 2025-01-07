@@ -49,6 +49,13 @@ nav ul li a:hover {
     border-radius: 5px;
 }
 
+p {
+    text-indent: 10px;
+    margin-left: 10px;
+    text-align: center;
+}
+
+
 main h3 {
     margin-top: 50px;
     padding: auto;
@@ -64,12 +71,14 @@ main h4 {
 
 #map {
     height: 400px;
-    width: 100%;
-    margin-top: 20px;
-    margin-bottom: 10px;
+    width: 60%;
+    margin: 20px auto 10px auto;
+    position: fixed;
     border: 1px solid #ccc;
     border-radius: 8px;
+    z-index: -1;
 }
+
 
 footer {
     background-color: #333;
