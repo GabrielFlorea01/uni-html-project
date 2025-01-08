@@ -71,7 +71,7 @@ main h4 {
 
 #map {
     height: 400px;
-    width: 60%;
+    width: 100%;
     margin: 20px auto 10px auto;
     position: fixed;
     border: 1px solid #ccc;
