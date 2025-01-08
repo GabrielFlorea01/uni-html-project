@@ -80,3 +80,22 @@ if (order) {
         }, 2000);
     });
 }
+
+const correctPassword = "Parola123";
+
+function checkPassword() {
+    const passwordInput = document.getElementById('passwordInput').value;
+    const regex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+
+    if (!regex.test(passwordInput)) {
+        alert('Parola nu respectă cerințele! Trebuie să conțină cel puțin o literă mică, o literă mare, un număr și să aibă minim 8 caractere.');
+        return;
+    }
+
+    if (passwordInput === correctPassword) {
+        document.getElementById('password-protection').style.display = 'none';
+        document.getElementById('main-content').style.display = 'block';
+    } else {
+        alert('Parolă incorectă! Încercați din nou.');
+    }
+}
