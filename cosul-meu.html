@@ -8,28 +8,39 @@
 </head>
 
 <body>
-    <header>
-        <div class="logo">
-            <h1>Cosul meu</h1>
-            <nav>
-                <ul class="menu">
-                    <li><a href="index.html">Acasa</a></li>
-        </div>
-    </header>
-    <main>
-        <section id="basket-contents">
-            <h2>Produsele adaugate in cos:</h2>
-            <ul id="product-list"></ul>
-            <p id="total-display"><strong>Total: RON</strong></p>
+    <div id="password-protection" style="text-align: center; padding: 20px;">
+        <h2>Introduceți parola pentru a accesa coșul:</h2>
+        <input type="password" id="passwordInput" placeholder="Introduceți parola" name="pw"
+            title="Parola trebuie să conțină cel puțin o literă mică, o literă mare, un număr și să aibă minim 8 caractere." required>
+        <button onclick="checkPassword()">Accesează</button>
+    </div>
+
+    <div id="main-content" style="display:none;">
+        <header>
+            <div class="logo">
+                <h1>Cosul meu</h1>
+                <nav>
+                    <ul class="menu">
+                        <li><a href="index.html">Acasa</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <section id="basket-contents">
+                <h2>Produsele adaugate in cos:</h2>
+                <ul id="product-list"></ul>
+                <p id="total-display"><strong>Total: RON</strong></p>
                 <button id="clear-basket" class="clear-basket-btn">Șterge toate produsele din coș</button>
                 <button id="shop" class="success-btn">Comandă produsele</button>                
-        </section>
-    </main>
+            </section>
+        </main>
 
-    <footer>
-        <p>&copy; 2025 Magazin Telefoane. Toate drepturile rezervate.</p>
-    </footer>
-
+        <footer>
+            <p>&copy; 2025 Magazin Telefoane. Toate drepturile rezervate.</p>
+        </footer>
+    </div>
     <script src="cosulmeu.js"></script>
 </body>
 </html>

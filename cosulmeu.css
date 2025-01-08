@@ -4,6 +4,41 @@
     box-sizing: border-box;
 }
 
+#password-protection {
+    text-align: center;
+    padding: 20px;
+    margin-top: 100px;
+}
+
+#password-protection h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+#passwordInput {
+    padding: 10px;
+    width: 250px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+#password-protection button {
+    padding: 10px 20px;
+    background-color: #218838;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#password-protection button:hover {
+    background-color: #1e7e34;
+}
+
 body {
     margin: 0;
     padding: 0;
