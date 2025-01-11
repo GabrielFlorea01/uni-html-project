@@ -1,42 +1,23 @@
 const basket = JSON.parse(localStorage.getItem('basket')) || [];
 const productList = document.getElementById('product-list');
 const totalDisplay = document.getElementById('total-display');
-const promotionMessage = document.createElement('p');
-promotionMessage.id = 'promotion-message';
-promotionMessage.style.color = 'green';
-promotionMessage.style.textAlign = 'center';
-promotionMessage.style.fontWeight = 'bold';
-document.body.appendChild(promotionMessage);
 
-const discountWorker = new Worker('discountWorker.js');
-
-function updateBasketDisplay(discountedBasket) {
+function updateBasketDisplay() {
     productList.innerHTML = '';
-    discountedBasket.forEach(product => {
+    basket.forEach(product => {
         const li = document.createElement('li');
-        li.innerHTML = `${product.name} - ${product.productPrice} RON, cu reducere -- ${product.discountedPrice} RON`;
+        li.innerHTML = `${product.name} - ${product.price} RON`;
         productList.appendChild(li);
     });
 
-    const total = discountedBasket.reduce((sum, product) => sum + parseFloat(product.discountedPrice), 0);
+    const total = basket.reduce((sum, product) => sum + parseFloat(product.price), 0);
     if (totalDisplay) {
         totalDisplay.textContent = `Total: ${total.toFixed(2)} RON`;
     }
 }
 
 if (basket.length > 0) {
-    discountWorker.postMessage(basket);
-    discountWorker.addEventListener('message', function (event) {
-        const { type, data } = event.data;
-        if (type === 'basket') {
-            updateBasketDisplay(data);
-        } else if (type === 'message') {
-            promotionMessage.textContent = data;
-            setTimeout(() => {
-                promotionMessage.textContent = '';
-            }, 3000);
-        }
-    });
+    updateBasketDisplay();
 } else {
     productList.innerHTML = '<li>Cosul este gol.</li>';
     if (totalDisplay) {

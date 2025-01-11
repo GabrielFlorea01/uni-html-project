@@ -61,3 +61,44 @@ document.querySelectorAll('.produs button').forEach(button => {
 basket.addEventListener('click', function() {
         window.location.href = 'cosul-meu.html';
 });
+
+//web worker
+function startCountdown() {
+    if (typeof Worker !== "undefined") {
+        const modal = document.getElementById('countdown');
+        modal.style.display = 'block';
+
+        const workerBlob = new Blob([`
+            self.onmessage = function(event) {
+                if (event.data === 'start') {
+                    let count = 3;
+                    const countdown = setInterval(() => {
+                        count--;
+                        self.postMessage({ count: count });
+                        if (count <= 0) {
+                            clearInterval(countdown);
+                        }
+                    }, 1000);
+                }
+            };
+        `], { type: 'application/javascript' });
+
+        const worker = new Worker(URL.createObjectURL(workerBlob));
+        worker.postMessage('start');
+
+        worker.onmessage = function(event) {
+            if (event.data.count > 0) {
+                document.getElementById('countdownText').innerText = `Vei fi redirecționat catre Cosul Tau în: ${event.data.count}`;
+            } else {
+                document.getElementById('countdownText').innerText = "Redirecționare...";
+                setTimeout(() => {
+                    modal.style.display = 'none';
+                    window.location.href = 'cosul-meu.html';
+                }, 1000);
+                worker.terminate();
+            }
+        };
+    } else {
+        alert('Browser-ul tău nu suportă Web Workers!');
+    }
+}
