@@ -39,6 +39,10 @@
     background-color: #1e7e34;
 }
 
+#main-content {
+    display: none;
+}
+
 body {
     margin: 0;
     padding: 0;
