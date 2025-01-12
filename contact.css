@@ -110,6 +110,12 @@ button[type="button"] {
     width: 100%;
 }
 
+p {
+    display:none;
+    color: green;
+    font-weight: bold;
+}
+
 footer {
     background-color: #333;
     color: white;
