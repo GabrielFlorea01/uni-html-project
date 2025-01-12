@@ -1,3 +1,5 @@
+document.getElementById("date").textContent = new Date().toLocaleDateString("ro-RO");
+
 function togglePromotion() {
     const promotion = document.getElementById('promotion');
     promotion.classList.toggle('hidden');
