@@ -39,12 +39,11 @@ document.querySelectorAll('.produs button').forEach(button => {
         const product = event.target.closest('.produs');
         const productName = product.querySelector('h3').textContent;
         const productPrice = product.querySelector('.price').textContent;
-        const productImage = product.querySelector('img').src;
 
         alert(`Produsul ${productName} a fost adăugat în coș!`);
 
         let basketItems = JSON.parse(localStorage.getItem('basket')) || [];
-        basketItems.push({ name: productName, price: productPrice, image: productImage});
+        basketItems.push({ name: productName, price: productPrice});
         localStorage.setItem('basket', JSON.stringify(basketItems));
 
         const basket = document.getElementById('basket');
@@ -56,10 +55,6 @@ document.querySelectorAll('.produs button').forEach(button => {
             basket.classList.remove('droppable');
         }, 1000);
     });
-});
-
-basket.addEventListener('click', function() {
-        window.location.href = 'cosul-meu.html';
 });
 
 //web worker
@@ -99,6 +94,6 @@ function startCountdown() {
             }
         };
     } else {
-        alert('Browser-ul tău nu suportă Web Workers!');
+        alert('Browser-ul tău nu suportă Web Worker!');
     }
 }
